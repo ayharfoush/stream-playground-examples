@@ -17,7 +17,7 @@ Write a stream pipeline that:
 
 1. Prints the names of countries in the ascending order of the number of timezones.
 
-1. Prints the number of timezones for each country in the form _name_`: `_population_, in the ascending order of the number of timezones.
+1. Prints the number of timezones for each country in the form _name_`: `_timezones_, in the ascending order of the number of timezones.
 
 1. Returns the number of countries with no Spanish country name translation (the Spanish language is identified by the language code `es`).
 
