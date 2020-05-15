@@ -1,0 +1,26 @@
+import countries.*;
+
+var countries = new Countries().getAll();
+
+//1. Returns the longest country name translation.
+
+countries.stream().
+flatMap(country -> country.getTranslations().entrySet().stream()).
+map(entry -> entry.getValue()).
+max(Comparator.comparingInt(String::length)).
+get();
+
+//2. Returns the longest Italian (i.e., "it") country name translation.
+
+countries.stream().
+filter(country -> country.getTranslations().containsKey("it")).
+flatMap(country -> country.getTranslations().entrySet().stream()).
+map(entry -> entry.getValue()).
+max(Comparator.comparingInt(String::length)).
+  get();
+
+//4. Prints single word country names
+countries.stream().
+map(Country::getName).
+filter(s -> !s.contains(" ")).
+forEach(System.out::println)
